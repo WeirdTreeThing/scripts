@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Gets the state of your bluetooth adapter and either toggles it on or off
+
+off () {
+	bluetoothctl power off
+	exit
+}
+on () {
+	bluetoothctl power on
+	exit
+}
+
+bluetoothctl show | grep "Powered: yes" || on
+bluetoothctl show | grep "Powered: no" || off

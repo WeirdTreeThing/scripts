@@ -1,0 +1,4 @@
+#!/bin/bash
+
+paru -Syu
+flatpak update

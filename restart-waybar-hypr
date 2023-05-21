@@ -1,0 +1,4 @@
+#!/bin/bash
+
+killall -9 waybar
+waybar -c .config/waybar/config-hypr -s .config/waybar/style-hypr.css &

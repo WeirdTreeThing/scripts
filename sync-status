@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while [[ $(grep -e Dirty: /proc/meminfo | grep --color=never -o '[0-9]\+') -gt 5000 ]]; do
+      SYNC_MB=$(grep -e Dirty: /proc/meminfo | grep --color=never -o '[0-9]\+' | awk '{$1/=1024;printf "%.2fMB\n",$1}')
+      echo -en "\r${SYNC_MB}"
+      sleep 1
+done
